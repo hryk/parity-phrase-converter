@@ -8,8 +8,8 @@ Convert Parity Phrase to [Web3 secret storage]() JSON file.
 To convert parity phrase to web3 secret storage,
 
 ```
-$ git clone https://github.com/hryk/parity_phrase_converter.git
-$ cd parity_phrase_converter
+$ git clone https://github.com/hryk/parity-phrase-converter.git
+$ cd parity-phrase-converter
 $ npm install
 $ ./bin/run
 Type parity word phrase: tattle unafraid subtotal prologue alfalfa lurch masculine sandworm valium conduit briar favorable
@@ -22,8 +22,8 @@ Keystore is generated at: keystore.json
 To display private key,
 
 ```
-$ git clone https://github.com/hryk/parity_phrase_converter.git
-$ cd parity_phrase_converter
+$ git clone https://github.com/hryk/parity-phrase-converter.git
+$ cd parity-phrase-converter
 $ npm install
 $ ./bin/run --privatekey
 Type parity word phrase: tattle unafraid subtotal prologue alfalfa lurch masculine sandworm valium conduit briar favorable
