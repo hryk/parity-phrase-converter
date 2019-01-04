@@ -9,8 +9,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "/bin",
+    "/src"
+  ],
   "author": "1vq9",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "oclif": "^1.12.8"
   },
