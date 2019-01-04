@@ -1,0 +1,27 @@
+{
+  "name": "parity_phrase_converter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "bin": {
+    "parity_phrase_converter": "./bin/run"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "1vq9",
+  "license": "ISC",
+  "devDependencies": {
+    "oclif": "^1.12.8"
+  },
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "@parity/wordlist": "^1.1.0",
+    "cli-ux": "^5.0.0",
+    "ethereumjs-util": "^6.0.0",
+    "ethereumjs-wallet": "^0.6.3",
+    "hdkey": "^1.1.0"
+  }
+}
