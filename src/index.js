@@ -35,14 +35,17 @@ class ParityPhraseConverterCommand extends Command {
             let password_confirmation = false;
             let confirmed_password = null;
             let num_try = 1;
-            while (!password_confirmation || num_try >= 3) {
+            while (!password_confirmation) {
                 const password = await cli.prompt("Type password to create web3 secret storage", {type: 'hide'});
                 const password_confirm = await cli.prompt("Re-type password", {type: 'hide'});
                 if (password === password_confirm) {
                     password_confirmation = true;
                     confirmed_password = password;
                 }
-                num_try += 1
+                else {
+                    if (num_try > 2) password_confirmation = true;
+                    num_try += 1
+                }
             }
             if (password_confirmation === true && confirmed_password !== null) {
                 const keystore = restored_wallet.toV3(confirmed_password);
