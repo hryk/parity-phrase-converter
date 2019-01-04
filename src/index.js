@@ -1,4 +1,5 @@
 const fs = require('fs');
+const process = require('process');
 const {Command, flags} = require('@oclif/command');
 const parityWordlist = require('@parity/wordlist');
 const ethUtil = require('ethereumjs-util');
@@ -25,6 +26,10 @@ class ParityPhraseConverterCommand extends Command {
             const privkey_buff = fromParityPhrase(phrase);
             const restored_wallet = Wallet.fromPrivateKey(privkey_buff);
             this.log("Address: " + restored_wallet.getChecksumAddressString());
+            if (flags.privatekey === true) {
+                this.log("Private Key: " + restored_wallet.getPrivateKeyString());
+                process.exit(0);
+            }
             // Export wallet as Web3 secret storage
             //  https://github.com/ethereum/wiki/wiki/Web3-Secret-Storage-Definition
             let password_confirmation = false;
@@ -60,7 +65,8 @@ ParityPhraseConverterCommand.description = "Parity phrase converter converts par
 ParityPhraseConverterCommand.flags = {
     "version": flags.version({"char": "v"}),
     "help": flags.help({"char": "h"}),
-    "output": flags.string({"char": "o", "default": "keystore.json"})
+    "output": flags.string({"char": "o", "default": "keystore.json"}),
+    "privatekey": flags.boolean({"char": "p", "default": false}),
 };
 
 module.exports = ParityPhraseConverterCommand;
